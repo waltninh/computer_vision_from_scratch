@@ -12,6 +12,8 @@ laplacian = cv2.Laplacian(gray, cv2.CV_64F)        # Laplacian
  
 titles = ["Original (gray)", "Canny", "Sobel", "Laplacian"]
 images = [gray, canny, sobel, abs(laplacian)]
+plt.figure(figsize=(16, 5))
+
 for i, (t, im) in enumerate(zip(titles, images)):
     plt.subplot(1, 4, i + 1); plt.imshow(im, cmap="gray"); plt.title(t); plt.axis("off")
 plt.show()
